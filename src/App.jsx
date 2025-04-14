@@ -1,5 +1,5 @@
 import React from 'react'
-import Newsapp from './components/Newsapp'
+import Newsapp from './components/Newsapp'  
 
 const App = () => {
   return (

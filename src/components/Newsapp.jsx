@@ -5,11 +5,11 @@ const Newsapp = () => {
 
   const [search,setSearch] = useState("india");
   const [newsData,setNewsData] = useState([]);
-  const API_KEY = "321a3bda653e46e1ac254201b37fba5c";
+  
 
   const getData = async() => {
     if(search != ""){
-    const response = await fetch(`https://newsapi.org/v2/everything?q=${search}&apiKey=${API_KEY}`);
+    const response = await fetch(`https://newsapi.org/v2/everything?q=${search}&apiKey=${import.meta.env.VITE_API_KEY}`);
     const jsonData = await response.json();
     // console.log(jsonData.articles[0]);
     setNewsData(jsonData.articles);
