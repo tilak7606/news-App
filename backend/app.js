@@ -5,11 +5,12 @@ require('dotenv').config();
 const cors = require('cors');
 app.use(cors());
 
-console.log("hey ")
+console.log("hey")
+app.get('/', (req, res) => {
+    res.send('API is running ✅');
+  });
 
-app.get('/api/news',async function(req,res){
-
-    
+app.get('/api/news',async function(req,res){    
     const {q} = req.query;
     const response = await fetch(`https://newsapi.org/v2/everything?q=${q}&apiKey=${process.env.API_KEY}`);
     const jsonData = await response.json();
